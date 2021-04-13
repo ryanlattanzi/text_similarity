@@ -19,9 +19,18 @@ Text Similarity project involving manual Levenshtein Distance calculations, all 
 
 ## Instructions to Run the Application
 
-1. Clone this repo (```git clone https://github.com/ryanlattanzi/text_similarity save/path/local```).
+1. Clone this repo (```git clone https://github.com/ryanlattanzi/text_similarity {local/save/path}```).
 2. Ensure Docker is up and ready to go.
 3. cd into the repo and run ```sh setup.sh {IMAGE_TAG}```. This should build and run the docker container on ```http://0.0.0.0:80```. If you do not include an ```{IMAGE_TAG}```, it will default to 'text_sim'.
 4. In ```/run```, there is a ```requirements.txt``` file that includes the ```pyyaml``` and ```requests``` library dependencies that are needed in ```main.py```. These are left for you to install in the case that you want to use virtualenv instead of installing globally.
 5. Ensure that line 7 in ```compare_samples.sh``` has the correct entry (either 'python' or 'python3') for your system.
 6. Finally, run ```sh compare_samples.sh``` to get an output on your terminal.
+
+## Thoughts on Hosting and Scaling
+
+Three possibilities of hosting include:
+  1. Docker with a Flask app on AWS ECS (this involves a good amount of overhead: ```https://medium.com/adobetech/deploy-microservices-using-aws-ecs-fargate-and-api-gateway-1b5e71129338```).
+  2. Running directly through AWS Lambda and exposing via API Gateway. This is nice because concurrency is inherently built in, and is super simple to set up.
+  3. Mixing 1 and 2 by deploying a Lambda function as a container image, which includes the ```lambda_handler``` function as well as needing to install some specific Lambda clients.
+
+Personally, I like 2 best, but I think 1 is the most robust in the long run.
