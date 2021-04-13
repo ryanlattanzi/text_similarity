@@ -1,0 +1,5 @@
+---
+text_path      : text.json
+retry_limit    : 5
+score_precision: 5
+model_endpoint : http://0.0.0.0:80/similarity
