@@ -14,7 +14,7 @@ Text Similarity project involving manual Levenshtein Distance calculations, all 
   - ```main.py```: Python script that calls in the text and sends requests to the model. Utilizes the ```multiprocessing``` package.
   - ```utils.py```: Utility functions to support ```main.py```.
 - ```/app```
-  - ```server.py```: Flask service that provides two endpoints: "/health" [GET], and "/similarity" [POST]. Accepts two strings ("src_text" and "target_text") and calculates both raw and normalized Levenshtein Distance between them.
+  - ```server.py```: Flask service that provides two endpoints: ```/health``` [GET], and ```/similarity``` [POST]. Accepts two strings ("src_text" and "target_text") and calculates both raw and normalized Levenshtein Distance between them.
   - ```gunicorn.sh```: Runs the Flask application through Gunicorn, a python WSGI server. Binds to port 80 and initializes 3 workers.
 
 ## Instructions to Run the Application
