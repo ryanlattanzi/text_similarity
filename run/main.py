@@ -36,7 +36,7 @@ def process_similarity_single(text_dict):
         resp = RETRY_OBJ.post(MODEL_ENDPOINT, json = text_dict)
         resp = resp.json()
 
-        print('-------------------------------------------')
+        print('\n-------------------------------------------')
         print('Source:\n{}\n'.format(text_dict['src_text']))
         print('Target:\n{}\n'.format(text_dict['target_text']))
 
@@ -50,7 +50,7 @@ def process_similarity_single(text_dict):
     except Exception as exc:
         print(exc)
     finally:
-        print('-------------------------------------------\n')
+        print('-------------------------------------------')
 
 def clean_text(text):
     # --------------------------------------------------------------------
