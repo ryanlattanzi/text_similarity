@@ -21,7 +21,7 @@ Text Similarity project involving manual Levenshtein Distance calculations, all 
 
 1. Clone this repo (```git clone https://github.com/ryanlattanzi/text_similarity {local/save/path}```).
 2. Ensure Docker is up and ready to go.
-3. cd into the repo and run ```sh setup.sh {IMAGE_TAG}```. This should build and run the docker container on ```http://0.0.0.0:80```. If you do not include an ```{IMAGE_TAG}```, it will default to 'text_sim'.
+3. ```cd``` into the repo and run ```sh setup.sh {IMAGE_TAG}```. This should build and run the docker container on ```http://0.0.0.0:80```. If you do not include an ```{IMAGE_TAG}```, it will default to 'text_sim'.
 4. In ```/run```, there is a ```requirements.txt``` file that includes the ```pyyaml``` and ```requests``` library dependencies that are needed in ```main.py```. These are left for you to install in the case that you want to use virtualenv instead of installing globally.
 5. Ensure that line 7 in ```compare_samples.sh``` has the correct entry (either 'python' or 'python3') for your system.
 6. Finally, run ```sh compare_samples.sh``` to get an output on your terminal.
